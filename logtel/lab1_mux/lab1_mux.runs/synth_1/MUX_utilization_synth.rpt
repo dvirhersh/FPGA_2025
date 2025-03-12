@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2.1 (win64) Build 5266912 Sun Dec 15 09:03:24 MST 2024
-| Date         : Wed Mar 12 14:11:18 2025
+| Date         : Wed Mar 12 14:24:32 2025
 | Host         : dvirhersh_comp running 64-bit major release  (build 9200)
 | Command      : report_utilization -file MUX_utilization_synth.rpt -pb MUX_utilization_synth.pb
 | Design       : MUX
@@ -31,13 +31,13 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |    1 |     0 |          0 |     63400 | <0.01 |
-|   LUT as Logic          |    1 |     0 |          0 |     63400 | <0.01 |
+| Slice LUTs*             |    2 |     0 |          0 |     63400 | <0.01 |
+|   LUT as Logic          |    2 |     0 |          0 |     63400 | <0.01 |
 |   LUT as Memory         |    0 |     0 |          0 |     19000 |  0.00 |
 | Slice Registers         |    0 |     0 |          0 |    126800 |  0.00 |
 |   Register as Flip Flop |    0 |     0 |          0 |    126800 |  0.00 |
 |   Register as Latch     |    0 |     0 |          0 |    126800 |  0.00 |
-| F7 Muxes                |    0 |     0 |          0 |     31700 |  0.00 |
+| F7 Muxes                |    1 |     0 |          0 |     31700 | <0.01 |
 | F8 Muxes                |    0 |     0 |          0 |     15850 |  0.00 |
 +-------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -93,7 +93,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |    7 |     0 |          0 |       210 |  3.33 |
+| Bonded IOB                  |   12 |     0 |          0 |       210 |  5.71 |
 | Bonded IPADs                |    0 |     0 |          0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         6 |  0.00 |
 | PHASER_REF                  |    0 |     0 |          0 |         6 |  0.00 |
@@ -149,9 +149,10 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| IBUF     |    6 |                  IO |
+| IBUF     |   11 |                  IO |
+| LUT6     |    2 |                 LUT |
 | OBUF     |    1 |                  IO |
-| LUT6     |    1 |                 LUT |
+| MUXF7    |    1 |               MuxFx |
 +----------+------+---------------------+
 
 
